@@ -1,0 +1,22 @@
+[project]
+name = "virtuguide"
+version = "0.1.0"
+description = "Personalized audio tour guides"
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2", "pyyaml>=6", "typer>=0.12"]
+
+[project.scripts]
+virtuguide = "virtuguide.cli:app"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

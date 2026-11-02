@@ -1,0 +1,51 @@
+id: newburyport
+title: Newburyport, MA
+start: market-square
+defaults: {mode: walk}
+
+nodes:
+  market-square:
+    title: Market Square
+    topic: The brick commercial heart of a once-rich shipping town, and the urban-renewal fight that nearly flattened it
+    geo: {lat: 42.8113, lon: -70.8773, radius: 40}
+    next:
+      - {to: waterfront,   label: Down to the river,          minutes: 3}
+      - {to: high-street,  label: Up the hill to the mansions, minutes: 8}
+      - {to: custom-house, label: The maritime museum,        minutes: 4}
+
+  waterfront:
+    title: Waterfront Park
+    topic: What the harbor looked like when it was full of ships
+    geo: {lat: 42.8120, lon: -70.8800, radius: 60}
+    notes: Boardwalk views toward the Merrimack mouth.   # injected as preferred facts
+    next:
+      - {to: custom-house, minutes: 5}
+      - {to: plum-island,  label: Drive to the beach, mode: drive, minutes: 15, optional: true}
+
+  custom-house:
+    title: Custom House Maritime Museum
+    topic: Clipper ships, customs duty, and why this building exists
+    geo: {lat: 42.8118, lon: -70.8764, radius: 30}
+    next:
+      - {to: market-square, minutes: 4}
+      - {to: high-street,   minutes: 9}
+
+  high-street:
+    title: High Street
+    topic: Federal-era captains' houses as a display of money
+    geo: {lat: 42.8085, lon: -70.8730, radius: 80}
+    next:
+      - {to: old-hill, minutes: 10}
+
+  old-hill:
+    title: Old Hill Burying Ground
+    topic: Gravestones as local history, and what they say about who got remembered
+    geo: {lat: 42.8070, lon: -70.8690, radius: 50}
+    next: []                  # terminal
+
+  plum-island:
+    title: Plum Island
+    topic: Barrier island, salt marsh, birds
+    geo: {lat: 42.7900, lon: -70.8030, radius: 300}
+    optional: true
+    next: []
